@@ -25,10 +25,17 @@ router.get('/shop_58/:category',async function(req,res){
   console.log('category',req.params.category);
   try{
     const cid =await category_58.fetchCatIdByName(req.params.category);
-    console.log('cid',cid);
+    //console.log('cid',cid);
     //const results = shop_58.fetchProductBycategory(cid);
     let results=await shop_58.fetchProductsByShop(1);
     console.log('test results',JSON.stringify(results));
+
+    res.render('crown2_58/products_58',{
+      data:results,
+      title:req.params.category,
+      name:'TingAn Hsu',
+      id:'409411658'
+    });
 
   }catch(err){
     console.log(err);
