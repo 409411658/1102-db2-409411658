@@ -22,7 +22,19 @@ const category_58=class category_58{
             console.log('error',err);
         }
     }
+
+    static async fetchCatIdByName(name){
+        try{
+            let results=await db.query(`SELECT * from category_58 where name =$1`,[name]);
+            //console.log('fetchAll results', JSON.stringify(results.rows));
+            return results.rows[0].id;
+        }catch(err){
+            console.log('error',err);
+        }
+    }
 }
+
+
 
 //testing
 //const test=async ()=>{
