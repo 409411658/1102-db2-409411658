@@ -39,11 +39,11 @@ const shop_58=class shop_58{
 }
 
 //testing
-const test=async ()=>{
-    let results=await shop_58.fetchProductsByShop(1);
-    console.log('test results',JSON.stringify(results));
-}
+//const test=async ()=>{
+//    let results=await shop_58.fetchProductsByShop(1);
+//    console.log('test results',JSON.stringify(results));
+//}
 
-test();
+//test();
 
 module.exports=shop_58;
