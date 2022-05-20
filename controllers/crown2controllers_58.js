@@ -1,6 +1,13 @@
 const category_58=require('../models/category_58');
 const shop_58=require('../models/shop_58');
 
+//create
+exports.createProducts = async (req,res) =>{
+  console.log('body',req.body);
+  res.json({msg : 'create -- body data received'});
+
+};
+
 exports.getcategories = async (req,res) => {
     try{
 
