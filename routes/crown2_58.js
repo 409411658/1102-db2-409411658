@@ -9,10 +9,20 @@ const crown2controllers_58 = require('../controllers/crown2controllers_58');
 
 
 //create
-router.post('/products_58',crown2controllers_58.createProducts);
+router.post('/products_58/create',crown2controllers_58.createProducts);
 
-/* GET home page. */
+//read
 router.get('/', crown2controllers_58.getcategories) ;
 router.get('/shop_58/:category', crown2controllers_58.getProductsBycategory);
+
+//update
+
+router.post('/products_58/update',crown2controllers_58.updateProducts);
+
+//delete
+router.get('/products_58/delete/:id',crown2controllers_58.deleteProduct);
+
+
+
 
 module.exports = router;
