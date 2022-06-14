@@ -41,10 +41,28 @@ router.get('/', async (req, res) =>{
 });
 
 
+
+
 router.get('/create',(req,res)=>{
     res.render('book_58/add_58',{
         id: '409411658',
         name:'TingAn',
     });
 });
+
+//delete
+router.get('/delete/:id',async(req,res)=>{
+    try{
+        console.log('delete id',req.params.id);
+        const query = {
+            text:`DELETE FROM book_58 WHERE id = $1`,
+            values:[req.params.id],
+        };
+        const results= await db.query(query);
+        res.redirect('/book_58');
+    }catch(err){
+        console.log(err);
+    }
+});
+
 module.exports = router;
