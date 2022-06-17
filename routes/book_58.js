@@ -92,7 +92,7 @@ router.get('/edit/:id',async(req,res)=>{
         };
         const results = await db.query(query);
         data=results.rows;
-        res.render('/book_58/edit_58',{
+        res.render('book_58/edit_58',{
             id:data[0].id,
             name:data[0].name,
             author:data[0].author,
